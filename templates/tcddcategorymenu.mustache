@@ -1,0 +1,203 @@
+{{#hascategorymenus}}
+
+    <div class="dropdown tcdd-category-menu inline-block">
+        <button 
+            class="btn btn-primary dropdown-toggle" 
+            type="button" 
+            id="tcddCategoryMenu" 
+            data-toggle="dropdown" 
+            aria-haspopup="true" 
+            aria-expanded="false"
+        >
+            Training categories
+        </button>
+
+        <div class="dropdown-menu-triangle"></div>
+
+        <div class="dropdown-menu" aria-labelledby="tcddCategoryMenu">
+            <div class="flex">
+                <div class="w-1/3">
+
+                    {{#categorymenus}}
+
+                        {{#hascategory}}
+
+                            {{{ button }}}
+
+                        {{/hascategory}}
+
+                    {{/categorymenus}}   
+
+                </div>
+
+                <div class="w-2/3 tabs-menu">
+                    {{#hassubcategory1}}
+                        <p class="font-bold">Subcategories</p>
+                        <div id="menuItem-1" style="display: block;">
+                            <ul class="list-reset">
+                                {{#subcategory1items}}
+                                    {{#hassubcategoryitem}}
+                                        <li>
+                                            <a href="{{{ url }}}">{{{ subtitle }}}</a>
+                                        </li>
+                                    {{/hassubcategoryitem}}
+                                {{/subcategory1items}}
+                            </ul>
+                        </div>
+                    {{/hassubcategory1}}
+
+                    {{#hassubcategory2}}
+                        <div id="menuItem-2" style="display: none;">
+                            <ul class="list-reset">
+                                {{#subcategory2items}}
+                                    {{#hassubcategoryitem}}
+                                        <li>
+                                            <a href="{{{ url }}}">{{{ subtitle }}}</a>
+                                        </li>
+                                    {{/hassubcategoryitem}}
+                                {{/subcategory2items}}
+                            </ul>
+                        </div>
+                    {{/hassubcategory2}}
+
+                    {{#hassubcategory3}}
+                        <div id="menuItem-3" style="display: none;">
+                            <ul class="list-reset">
+                                {{#subcategory3items}}
+                                    {{#hassubcategoryitem}}
+                                        <li>
+                                            <a href="{{{ url }}}">{{{ subtitle }}}</a>
+                                        </li>
+                                    {{/hassubcategoryitem}}
+                                {{/subcategory3items}}
+                            </ul>
+                        </div>
+                    {{/hassubcategory3}}
+
+                    {{#hassubcategory4}}
+                        <div id="menuItem-4" style="display: none;">
+                            <ul class="list-reset">
+                                {{#subcategory4items}}
+                                    {{#hassubcategoryitem}}
+                                        <li>
+                                            <a href="{{{ url }}}">{{{ subtitle }}}</a>
+                                        </li>
+                                    {{/hassubcategoryitem}}
+                                {{/subcategory4items}}
+                            </ul>
+                        </div>
+                    {{/hassubcategory4}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .tcdd-category-menu .dropdown-menu {
+            min-width: 250px;
+            padding: 0;
+            margin-top: 20px;
+            background-color: rgba(2, 120, 21, .95);
+            color: #e2e2e2;
+            border-radius: 5px;
+            border: 1px solid #026e13;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12),
+                        0 2px 4px 0 rgba(0,0,0,0.08);
+            z-
+        }
+
+        .tcdd-category-menu.open .dropdown-menu-triangle {
+            position: absolute;
+            display: block;
+            z-index: 2000;
+            content: "";
+            width: 15px;
+            height: 15px;
+            left: 50px;
+            top: 100%;
+            margin: 13px;
+            background-color: red;
+            transform: rotate(45deg);
+            background-color: #027815;
+            border-top: 1px solid #026e13;
+            border-left: 1px solid #026e13;
+        }
+
+        .tcdd-category-menu .dropdown-menu li {
+            margin-bottom: .25rem;
+        }
+
+        .tcdd-category-menu .dropdown-menu a:link,
+        .tcdd-category-menu .dropdown-menu a:visited {
+            color: #fff;
+        }
+
+        .tcdd-category-menu .dropdown-menu a:hover,
+        .tcdd-category-menu .dropdown-menu a:focus {
+            color: #ffb900;
+            text-decoration: none;
+        }
+
+        @media screen and (min-width: 700px) {
+            .tcdd-category-menu .dropdown-menu {
+                min-width: 600px;
+            }
+        }
+
+        .tabs-menu {
+            border-left: 1px solid #026e13;
+            padding: 1em;
+        }
+
+        .tabs-menu div {
+            display: none;
+        }
+
+        .tcdd_tabs {
+            border: none;
+            background: none;
+            border-bottom: 1px solid #026e13;
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 1em;
+            background-color: #027815;
+            color: #fff
+        }
+
+        .tcdd_tabs:hover,
+        .tcdd_tabs:focus,
+        .tcdd_tabs:active {
+            color: #e2e2e2;
+            border-left: 3px solid #ffb900;
+            background-color: #01550f;
+        }
+    </style>
+
+    <script>
+        var tabs = document.querySelectorAll('.tcdd_tabs');
+        
+        tabs.forEach(function(tab) {
+            var tabMenuItems = document.querySelectorAll('.tabs-menu div');
+
+            tab.addEventListener('click', function(e) {
+                e.stopPropagation();
+
+                console.log("Clicked");
+            });
+
+            tab.addEventListener('mouseover', function(e) {
+                var itemNumber = (e.target.id)[e.target.id.length - 1];
+
+                tabMenuItems.forEach(function(item) {
+                    item.style.display = "none";
+                });
+
+                var activeItem = document.querySelector(`#menuItem-${itemNumber}`);
+
+                activeItem.style.display = "block";
+            });
+        });
+    </script>
+
+{{/hascategorymenus}}

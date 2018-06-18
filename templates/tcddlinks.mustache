@@ -1,0 +1,24 @@
+<div id="links">
+     <h3 class="mb-4">Links</h3>
+
+     {{#haslinkitems}}
+
+     	<ul class="list-reset">
+
+			{{#linkitems}}
+
+				{{#haslink}}
+
+					<li class="mb-3">
+						<a href="{{{ linkurl }}}" title="Link to {{{ haslink }}}">{{{ haslink }}}</a>
+					</li>
+
+				{{/haslink}}
+
+			{{/linkitems}}
+
+         </ul>
+               
+     {{/haslinkitems}}
+
+ </div>
