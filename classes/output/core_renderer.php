@@ -229,7 +229,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 'description' => $newcourse2description,
                 'title' => $hasnewcourse2,
                 'button' => "<a href = '$newcourse2buttonurl' title = '$newcourse2buttontext' alt='$newcourse2buttontext' class='btn btn-outline-primary ml-auto'> $newcourse2buttontext </a>",
-                'url' => $newcourse1buttonur2
+                'url' => $newcourse2buttonurl
             ) ,
             array(
                 'hascourse' => $hasnewcourse3,
@@ -238,7 +238,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 'description' => $newcourse3description,
                 'title' => $hasnewcourse3,
                 'button' => "<a href = '$newcourse3buttonurl' title = '$newcourse3buttontext' alt='$newcourse3buttontext' class='btn btn-outline-primary ml-auto'> $newcourse3buttontext </a>",
-                'url' => $newcourse1buttonur3
+                'url' => $newcourse3buttonurl
             ) ,
             array(
                 'hascourse' => $hasnewcourse4,
@@ -247,7 +247,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 'description' => $newcourse4description,
                 'title' => $hasnewcourse4,
                 'button' => "<a href = '$newcourse4buttonurl' title = '$newcourse4buttontext' alt='$newcourse4buttontext' class='btn btn-outline-primary ml-auto'> $newcourse4buttontext </a>",
-                'url' => $newcourse1buttonur4
+                'url' => $newcourse4buttonurl
             ) 
         )];
 
