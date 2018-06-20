@@ -33,6 +33,18 @@
 	background: url([[pix:theme_tcdd_learn|newcourse4image]]);
 }
 
+.usermenu .dropdown-menu {
+  position: absolute;
+  left: initial;
+  right: 0;
+  margin-top: 1.5rem;
+}
+
+// .dropdown-menu.show {
+//   position: absolute !important;
+//   right: 0;
+// }
+
 /**
  * Here you would add any of your custom component classes; stuff that you'd
  * want loaded *before* the utilities so that the utilities could still
