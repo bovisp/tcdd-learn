@@ -1,49 +1,239 @@
 @import "slick";
 @import "slick-theme";
 
+body {
+  font-family: "Roboto";
+}
+
+/*------------------------------------*\
+  #FRONTPAGE-TEMPLATE
+\*------------------------------------*/
+
 #page-site-index {
 	background-color: #FFF;
+
+  #page-header {
+    display: none;
+  }
+
+  #page-content {
+
+    #region-main {
+
+      .card {
+
+        &.card-block {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
-#page-site-index #page-header {
-	display: none;
-}
 
-#page-site-index #page-content #region-main .card.card-block {
-	display: none;
-}
 
-.courses .coursebox:hover {
-  background-color: #FFF;
-}
+
+/*------------------------------------*\
+  #NEW-COURSE-TEMPLATE
+\*------------------------------------*/
 
 .newcourse1image {
-	background: url([[pix:theme_tcdd_learn|newcourse1image]]);
+  background: url([[pix:theme_tcdd_learn|newcourse1image]]);
 }
 
 .newcourse2image {
-	background: url([[pix:theme_tcdd_learn|newcourse2image]]);
+  background: url([[pix:theme_tcdd_learn|newcourse2image]]);
 }
 
 .newcourse3image {
-	background: url([[pix:theme_tcdd_learn|newcourse3image]]);
+  background: url([[pix:theme_tcdd_learn|newcourse3image]]);
 }
 
 .newcourse4image {
-	background: url([[pix:theme_tcdd_learn|newcourse4image]]);
+  background: url([[pix:theme_tcdd_learn|newcourse4image]]);
 }
 
-.usermenu .dropdown-menu {
-  position: absolute;
-  left: initial;
-  right: 0;
-  margin-top: 1.5rem;
+.slick-image {
+  display: none;
+
+  @media screen and (min-width: 1068px) {
+    display: block;
+  }
 }
 
-// .dropdown-menu.show {
-//   position: absolute !important;
-//   right: 0;
-// }
+.slick-meta2 {
+  display: none;
+
+  @media screen and (min-width: 1068px) {
+    display: block;
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+  #HEADER-TEMPLATE
+\*------------------------------------*/
+
+#top-nav {
+  flex-direction: row;
+}
+
+.usermenu {
+
+  .dropdown-menu {
+    position: absolute;
+    left: initial;
+    right: 0;
+    margin-top: 1.5rem;
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+  #NEWS-TEMPLATE
+\*------------------------------------*/
+
+#news {
+  height: 400px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+
+
+
+/*------------------------------------*\
+  #COURSE-SEARCH-TEMPLATE
+\*------------------------------------*/
+
+#coursesearch {
+  margin-top: 0; 
+}
+
+
+
+
+
+/*------------------------------------*\
+  #CATEGORY-TEMPLATE
+\*------------------------------------*/
+
+.tcdd-category-menu {
+
+  .dropdown-menu {
+    min-width: 250px;
+    padding: 0;
+    margin-top: 20px;
+    background-color: rgba(2, 120, 21, .95);
+    color: #e2e2e2;
+    border-radius: 5px;
+    border: 1px solid #026e13;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);
+    position: absolute !important;
+
+    li {
+      margin-bottom: .25rem;
+    }
+
+    a {
+
+      &:link,
+      &:visited {
+        color: #fff;
+      }
+
+      &:hover,
+      &:focus {
+        color: #ffb900;
+        text-decoration: none;
+      }
+    }
+
+    @media screen and (min-width: 700px) {
+      min-width: 600px;
+    }
+  }
+
+  &.show {
+
+    .dropdown-menu-triangle {
+      position: absolute;
+      display: block;
+      z-index: 2000;
+      content: "";
+      width: 15px;
+      height: 15px;
+      left: 50px;
+      top: 100%;
+      margin: 13px;
+      background-color: red;
+      transform: rotate(45deg);
+      background-color: #027815;
+      border-top: 1px solid #026e13;
+      border-left: 1px solid #026e13;
+    }
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+  #COURSE-LISTING-PAGE
+\*------------------------------------*/
+
+.courses  {
+
+  .coursebox {
+
+    &:hover {
+      background-color: #FFF;
+    }
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  #COURSE-REGISTRATION-PAGE
+\*------------------------------------*/
+
+.tabs-menu {
+  border-left: 1px solid #026e13;
+  padding: 1em;
+
+  div {
+    display: none;
+  }
+}
+
+.tcdd_tabs {
+  border: none;
+  background: none;
+  border-bottom: 1px solid #026e13;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 1em;
+  background-color: #027815;
+  color: #fff;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #e2e2e2;
+    border-left: 3px solid #ffb900;
+    background-color: #01550f;
+  }
+}
 
 /**
  * Here you would add any of your custom component classes; stuff that you'd
