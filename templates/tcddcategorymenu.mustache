@@ -91,30 +91,5 @@
             </div>
         </div>
     </div>
-    <script>
-        var tabs = document.querySelectorAll('.tcdd_tabs');
-        
-        tabs.forEach(function(tab) {
-            var tabMenuItems = document.querySelectorAll('.tabs-menu div');
-
-            tab.addEventListener('click', function(e) {
-                e.stopPropagation();
-
-                console.log("Clicked");
-            });
-
-            tab.addEventListener('mouseover', function(e) {
-                var itemNumber = (e.target.id)[e.target.id.length - 1];
-
-                tabMenuItems.forEach(function(item) {
-                    item.style.display = "none";
-                });
-
-                var activeItem = document.querySelector(`#menuItem-${itemNumber}`);
-
-                activeItem.style.display = "block";
-            });
-        });
-    </script>
 
 {{/hascategorymenus}}

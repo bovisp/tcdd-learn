@@ -33,6 +33,7 @@ body {
 
 
 
+
 /*------------------------------------*\
   #NEW-COURSE-TEMPLATE
 \*------------------------------------*/
@@ -181,31 +182,6 @@ body {
   }
 }
 
-
-
-
-
-/*------------------------------------*\
-  #COURSE-LISTING-PAGE
-\*------------------------------------*/
-
-.courses  {
-
-  .coursebox {
-
-    &:hover {
-      background-color: #FFF;
-    }
-  }
-}
-
-
-
-
-/*------------------------------------*\
-  #COURSE-REGISTRATION-PAGE
-\*------------------------------------*/
-
 .tabs-menu {
   border-left: 1px solid #026e13;
   padding: 1em;
@@ -233,6 +209,94 @@ body {
     border-left: 3px solid #ffb900;
     background-color: #01550f;
   }
+}
+
+
+
+
+
+/*------------------------------------*\
+  #COURSE-LISTING-PAGE
+\*------------------------------------*/
+
+.courses  {
+
+  .coursebox {
+
+    &:hover {
+      background-color: #FFF;
+    }
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  #COURSE-REGISTRATION-PAGE
+\*------------------------------------*/
+
+.container--tabs {
+
+  .nav-tabs {
+    float: left;
+    width: 100%;
+    margin: 0;
+    list-style-type: none;
+    border-bottom: 1px solid #ddd;
+
+    > li {
+      float: left;
+      margin-bottom: -1px;
+
+      > a {
+        float: left;
+        margin-right: 2px;
+        line-height: 1.42857143;
+        padding: 10px;
+        border: 1px solid transparent;
+        border-radius: 4px 4px 0 0;
+
+        &:hover {
+          border-color: #eee #eee #ddd;
+        }
+      }
+
+      &.active {
+        > a,
+        > a:hover,
+        > a:focus {
+          color: #555;
+          cursor: default;
+          background-color: #fff;
+          border: 1px solid #ddd;
+          border-bottom-color: transparent;
+        }
+      }
+    }
+  }
+
+  .tab-content {
+    float: left;
+    width: 100%;
+
+    > .tab-pane {
+      display: none;
+
+      &.active {
+        display: block;
+        padding: 2.5% 3.5%;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+      }
+    }
+
+    > .active {
+      display: block;
+    }
+  }
+
 }
 
 /**
@@ -20378,5 +20442,11 @@ body {
 
   .xl\:z-auto {
     z-index: auto;
+  }
+}
+
+@media (min-width: 1340px) {
+  .xxl\:block {
+      display: block;
   }
 }

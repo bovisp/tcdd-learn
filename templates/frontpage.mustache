@@ -81,7 +81,8 @@
                         {{{ output.main_content }}}
                     </div>
                     <div class="container mx-auto">
-                        <h1 class="display-2 font-light mt-8">Training Portal</h1>
+                        <h5 class="mb-0 text-grey">Meteorological Service of Canada</h5>
+                        <h1 class="display-2 font-light mt-0">Training Portal</h1>
 
                         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis voluptatem nostrum, illum error ut, sapiente pariatur tempora facilis voluptatum. Error voluptatum animi aspernatur facere inventore, odit mollitia reiciendis sit repellat!</p>
 
@@ -138,21 +139,6 @@
 </body>
 </html>
 {{#js}}
-require(
-    [
-        'jquery',
-        'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js'
-    ], 
-    function($){
-        $('.hello').slick({
-            dots: true,
-            autoplay: false,
-            infinite:true,
-            autoplaySpeed: 5000,
-        });
-    }
-);
-
 require(['theme_boost/drawer'], function(mod) {
     mod.init();
 });
