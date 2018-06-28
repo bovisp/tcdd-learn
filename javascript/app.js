@@ -10445,6 +10445,23 @@ module.exports = __webpack_require__(2);
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// from:https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/remove()/remove().md
+(function (arr) {
+		arr.forEach(function (item) {
+				if (item.hasOwnProperty('remove')) {
+						return;
+				}
+				Object.defineProperty(item, 'remove', {
+						configurable: true,
+						enumerable: true,
+						writable: true,
+						value: function remove() {
+								if (this.parentNode !== null) this.parentNode.removeChild(this);
+						}
+				});
+		});
+})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+
 window._ = __webpack_require__(3);
 window.$ = window.jQuery = __webpack_require__(0);
 
@@ -10466,9 +10483,9 @@ var _require3 = __webpack_require__(11),
 var courses = document.querySelectorAll('#page-course-index-category .coursebox');
 
 if (courses.length !== 0) {
-	var courseUI = new CourseListing(courses);
+		var courseUI = new CourseListing(courses);
 
-	courseUI.create();
+		courseUI.create();
 }
 
 // Training categories menu
@@ -10479,41 +10496,41 @@ categoryMenu.create();
 var enrolPage = document.getElementById("page-enrol-index");
 
 if (enrolPage !== null) {
-	var enrolePage = new EnrolPage(enrolPage);
-	enrolePage.create();
+		var enrolePage = new EnrolPage(enrolPage);
+		enrolePage.create();
 }
 
 // Course enrol tabs javascript
 window.addEventListener("load", function () {
-	// store tabs variable
-	var myTabs = document.querySelectorAll("ul.nav-tabs > li");
+		// store tabs variable
+		var myTabs = document.querySelectorAll("ul.nav-tabs > li");
 
-	function myTabClicks(tabClickEvent) {
-		for (var i = 0; i < myTabs.length; i++) {
-			myTabs[i].classList.remove("active");
+		function myTabClicks(tabClickEvent) {
+				for (var i = 0; i < myTabs.length; i++) {
+						myTabs[i].classList.remove("active");
+				}
+
+				var clickedTab = tabClickEvent.currentTarget;
+				clickedTab.classList.add("active");
+
+				tabClickEvent.preventDefault();
+
+				var myContentPanes = document.querySelectorAll(".tab-pane");
+
+				for (i = 0; i < myContentPanes.length; i++) {
+						myContentPanes[i].classList.remove("active");
+				}
+
+				var anchorReference = tabClickEvent.target;
+				var activePaneId = anchorReference.getAttribute("href");
+				var activePane = document.querySelector(activePaneId);
+
+				activePane.classList.add("active");
 		}
 
-		var clickedTab = tabClickEvent.currentTarget;
-		clickedTab.classList.add("active");
-
-		tabClickEvent.preventDefault();
-
-		var myContentPanes = document.querySelectorAll(".tab-pane");
-
-		for (i = 0; i < myContentPanes.length; i++) {
-			myContentPanes[i].classList.remove("active");
+		for (i = 0; i < myTabs.length; i++) {
+				myTabs[i].addEventListener("click", myTabClicks);
 		}
-
-		var anchorReference = tabClickEvent.target;
-		var activePaneId = anchorReference.getAttribute("href");
-		var activePane = document.querySelector(activePaneId);
-
-		activePane.classList.add("active");
-	}
-
-	for (i = 0; i < myTabs.length; i++) {
-		myTabs[i].addEventListener("click", myTabClicks);
-	}
 });
 
 // let frontpage = document.getElementById("page-site-index");
