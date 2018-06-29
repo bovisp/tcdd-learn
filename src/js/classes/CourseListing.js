@@ -99,7 +99,7 @@ class CourseListing {
             })
         }
 
-        return teacherNames;
+        return teacherNames
     }
 
     getMetadata(selector) {

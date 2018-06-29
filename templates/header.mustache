@@ -17,35 +17,28 @@
 {{!
     Page header.
 }}
-<header role="banner" class="pos-f-t navbar navbar-full navbar-light bg-faded navbar-static-top moodle-has-zindex">
+<header id="top-nav" role="banner" class="pos-f-t navbar navbar-full navbar-light bg-faded navbar-static-top moodle-has-zindex">
 
-    <div id="top-nav" class="container-fluid navbar-nav flex items-center">
+    <div id="top-navbar-nav" class="container-fluid navbar-nav flex items-center">
 
-        <div data-region="drawer-toggle">
+        <div id="toggle-menu" data-region="drawer-toggle" class="w-1/2">
             <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn pull-xs-left m-r-1 btn-secondary" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}<span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></button>
         </div>
 
-        {{{ output.tcdd_categorymenu }}}
+        <div id="category-menu" class="w-1/2">
+            {{{ output.tcdd_categorymenu }}}
+        </div>
 
-        <div class="inline-block ml-4">
+        <div id="lang-menu" class="w-1/2 text-right">
             {{{ output.lang_menu }}}
         </div>
-
-        <div class="dropdown inline-block ml-auto mr-4">
-            <button class="btn btn-secondary dropdown-toggle border-0" type="button" id="tcddCourseSearchMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Course search">
-            <i class="fa fa-search"></i>
-            </button>
-
-            <div class="dropdown-menu dropdown-menu-right rounded mt-6 p-4" aria-labelledby="tcddCourseSearchMenu" style="right: 0; left: initial; position: absolute !important;">
-                {{>theme_tcdd_learn/course_search_form}}
-            </div>
+       
+        <div id="course-search" class="w-full text-center">
+            {{>theme_tcdd_learn/course_search_form}}
         </div>
 
-        <!-- <div class="inline-block ml-auto">
-            {{>theme_tcdd_learn/course_search_form}}
-        </div> -->
-
-        <!-- user_menu -->
-        {{{ output.user_menu }}}
+        <div id="user-menu" class="w-1/2">
+            {{{ output.user_menu }}}
+        </div>
     </div>
 </header>

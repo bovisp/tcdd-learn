@@ -10450,15 +10450,15 @@ window.$ = window.jQuery = __webpack_require__(0);
 
 __webpack_require__(6);
 __webpack_require__(8);
-__webpack_require__(12);
+__webpack_require__(9);
 
-var _require = __webpack_require__(9),
+var _require = __webpack_require__(10),
     CourseListing = _require.CourseListing;
 
-var _require2 = __webpack_require__(10),
+var _require2 = __webpack_require__(11),
     CategoryMenu = _require2.CategoryMenu;
 
-var _require3 = __webpack_require__(11),
+var _require3 = __webpack_require__(12),
     EnrolPage = _require3.EnrolPage;
 
 // Course listing page.
@@ -30979,6 +30979,27 @@ if ("document" in self) {
 /* 9 */
 /***/ (function(module, exports) {
 
+// from:https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/remove()/remove().md
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('remove')) {
+      return;
+    }
+    Object.defineProperty(item, 'remove', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function remove() {
+        if (this.parentNode !== null) this.parentNode.removeChild(this);
+      }
+    });
+  });
+})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31143,7 +31164,7 @@ var CourseListing = function () {
 module.exports = { CourseListing: CourseListing };
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -31186,7 +31207,7 @@ var CategoryMenu = function () {
 module.exports = { CategoryMenu: CategoryMenu };
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports) {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -31413,27 +31434,6 @@ var EnrolPage = function () {
 }();
 
 module.exports = { EnrolPage: EnrolPage };
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports) {
-
-// from:https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/remove()/remove().md
-(function (arr) {
-  arr.forEach(function (item) {
-    if (item.hasOwnProperty('remove')) {
-      return;
-    }
-    Object.defineProperty(item, 'remove', {
-      configurable: true,
-      enumerable: true,
-      writable: true,
-      value: function remove() {
-        if (this.parentNode !== null) this.parentNode.removeChild(this);
-      }
-    });
-  });
-})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
 
 /***/ })
 /******/ ]);

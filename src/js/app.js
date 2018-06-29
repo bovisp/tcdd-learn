@@ -19,7 +19,7 @@ if (courses.length !== 0) {
 }
 
 // Training categories menu
-const categoryMenu = new CategoryMenu
+const categoryMenu = new CategoryMenu 
 categoryMenu.create()
 
 // Course enrol page

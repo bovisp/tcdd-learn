@@ -79,18 +79,150 @@ body {
 \*------------------------------------*/
 
 #top-nav {
-  flex-direction: row;
-}
+  max-height: 200px;
 
-.usermenu {
+  @media screen and (min-width: 930px) {
+    max-height: 130px;
+  }
 
-  .dropdown-menu {
-    position: absolute;
-    left: initial;
-    right: 0;
-    margin-top: 1.5rem;
+  @media screen and (min-width: 1260px) {
+    max-height: 50px;
   }
 }
+
+#top-navbar-nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 200px;
+  padding-top: 1rem;
+
+  .langmenu {
+
+    select {
+      margin-left: 0;
+    }
+  }
+
+  .usermenu {
+
+    .dropdown-menu {
+      position: absolute;
+      left: initial;
+      right: 0;
+      margin-top: 1.5rem;
+    }
+  }
+
+  #toggle-menu {
+    order: 1;
+
+    @media screen and (min-width: 930px) {
+      width: auto;
+    }
+  }
+
+  #user-menu {
+    order: 2;
+
+    .action-menu-trigger {
+      margin-left: auto;
+    }
+
+    .usermenu {
+      text-align: right;
+    }
+
+    @media screen and (min-width: 930px) {
+      order: 4;
+      width: auto;
+      margin-left: auto;
+    }
+
+    @media screen and (min-width: 1260px) {
+      order: 5;
+      margin-left: 1.5rem;
+    }
+  }
+
+  #category-menu {
+    order: 3;
+
+    @media screen and (min-width: 930px) {
+      order: 2;
+      width: auto;
+      margin-right: 1rem;
+    }
+  }
+
+  #lang-menu {
+    order: 4;
+
+    @media screen and (min-width: 930px) {
+      order: 3;
+      text-align: left;
+      width: auto;
+    }
+  }
+
+  #course-search {
+    order: 5;
+
+    .coursesearchbox {
+       @media screen and (min-width: 1260px) {
+        width: auto;
+      }
+    }
+
+    @media screen and (min-width: 1260px) {
+      order: 4;
+      text-align: left;
+      width: auto;
+      margin-left: auto;
+      margin-right: 1rem;
+    }
+  }
+
+  @media screen and (min-width: 930px) {
+    height: 130px;
+  }
+
+  @media screen and (min-width: 1260px) {
+    height: 50px;
+    padding-top: 0;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {  
+  @media screen and (min-width: 1260px) {
+    #top-navbar-nav {
+      padding-top: .5rem;
+    }
+  }
+}
+
+[data-region="drawer"] {
+  top: 200px;
+  height: calc(100% - 200px);
+
+  @media screen and (min-width: 930px) {
+    top: 130px;
+    height: calc(100% - 130px);
+  }
+
+  @media screen and (min-width: 1260px) {
+    top: 50px;
+    height: calc(100% - 50px);
+  }
+}
+
 
 
 
