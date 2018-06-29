@@ -63,6 +63,17 @@ window.addEventListener("load", function() {
 	}
 })
 
+
+const blocks = document.querySelectorAll('.block')
+
+_.forEach(blocks, block => {
+  let header = block.querySelector('h5')
+
+  if (header.textContent === 'Manager Tools') {
+    header.parentNode.parentNode.remove()
+  } 
+})
+
 // let frontpage = document.getElementById("page-site-index");
 
 // if (frontpage) {

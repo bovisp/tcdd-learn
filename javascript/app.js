@@ -10467,9 +10467,9 @@ var _require3 = __webpack_require__(12),
 var courses = document.querySelectorAll('#page-course-index-category .coursebox');
 
 if (courses.length !== 0) {
-	var courseUI = new CourseListing(courses);
+		var courseUI = new CourseListing(courses);
 
-	courseUI.create();
+		courseUI.create();
 }
 
 // Training categories menu
@@ -10480,41 +10480,51 @@ categoryMenu.create();
 var enrolPage = document.getElementById("page-enrol-index");
 
 if (enrolPage !== null) {
-	var enrolePage = new EnrolPage(enrolPage);
-	enrolePage.create();
+		var enrolePage = new EnrolPage(enrolPage);
+		enrolePage.create();
 }
 
 // Course enrol tabs javascript
 window.addEventListener("load", function () {
-	// store tabs variable
-	var myTabs = document.querySelectorAll("ul.nav-tabs > li");
+		// store tabs variable
+		var myTabs = document.querySelectorAll("ul.nav-tabs > li");
 
-	function myTabClicks(tabClickEvent) {
-		for (var i = 0; i < myTabs.length; i++) {
-			myTabs[i].classList.remove("active");
+		function myTabClicks(tabClickEvent) {
+				for (var i = 0; i < myTabs.length; i++) {
+						myTabs[i].classList.remove("active");
+				}
+
+				var clickedTab = tabClickEvent.currentTarget;
+				clickedTab.classList.add("active");
+
+				tabClickEvent.preventDefault();
+
+				var myContentPanes = document.querySelectorAll(".tab-pane");
+
+				for (i = 0; i < myContentPanes.length; i++) {
+						myContentPanes[i].classList.remove("active");
+				}
+
+				var anchorReference = tabClickEvent.target;
+				var activePaneId = anchorReference.getAttribute("href");
+				var activePane = document.querySelector(activePaneId);
+
+				activePane.classList.add("active");
 		}
 
-		var clickedTab = tabClickEvent.currentTarget;
-		clickedTab.classList.add("active");
-
-		tabClickEvent.preventDefault();
-
-		var myContentPanes = document.querySelectorAll(".tab-pane");
-
-		for (i = 0; i < myContentPanes.length; i++) {
-			myContentPanes[i].classList.remove("active");
+		for (i = 0; i < myTabs.length; i++) {
+				myTabs[i].addEventListener("click", myTabClicks);
 		}
+});
 
-		var anchorReference = tabClickEvent.target;
-		var activePaneId = anchorReference.getAttribute("href");
-		var activePane = document.querySelector(activePaneId);
+var blocks = document.querySelectorAll('.block');
 
-		activePane.classList.add("active");
-	}
+_.forEach(blocks, function (block) {
+		var header = block.querySelector('h5');
 
-	for (i = 0; i < myTabs.length; i++) {
-		myTabs[i].addEventListener("click", myTabClicks);
-	}
+		if (header.textContent === 'Manager Tools') {
+				header.parentNode.parentNode.remove();
+		}
 });
 
 // let frontpage = document.getElementById("page-site-index");
