@@ -10517,6 +10517,7 @@ window.addEventListener("load", function () {
 		}
 });
 
+// Delete Manager Tools block
 var blocks = document.querySelectorAll('.block');
 
 _.forEach(blocks, function (block) {
@@ -10526,6 +10527,10 @@ _.forEach(blocks, function (block) {
 				header.parentNode.parentNode.remove();
 		}
 });
+
+// Make video player full width
+var playerWrapper = document.querySelector('.mediaplugin_videojs');
+playerWrapper.childNodes[0].style.maxWidth = '';
 
 // let frontpage = document.getElementById("page-site-index");
 

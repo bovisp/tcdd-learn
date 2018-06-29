@@ -63,7 +63,7 @@ window.addEventListener("load", function() {
 	}
 })
 
-
+// Delete Manager Tools block
 const blocks = document.querySelectorAll('.block')
 
 _.forEach(blocks, block => {
@@ -73,6 +73,10 @@ _.forEach(blocks, block => {
     header.parentNode.parentNode.remove()
   } 
 })
+
+// Make video player full width
+let playerWrapper = document.querySelector('.mediaplugin_videojs')
+playerWrapper.childNodes[0].style.maxWidth = ''
 
 // let frontpage = document.getElementById("page-site-index");
 
