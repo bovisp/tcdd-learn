@@ -260,7 +260,7 @@ body {
 .tcdd-category-menu {
 
   .dropdown-menu {
-    min-width: 250px;
+    min-width: 300px;
     padding: 0;
     margin-top: 20px;
     background-color: rgba(2, 120, 21, .95);
@@ -288,28 +288,16 @@ body {
       }
     }
 
+    @media screen and (min-width: 450px) {
+      min-width: 400px;
+    }
+
+    @media screen and (min-width: 550px) {
+      min-width: 500px;
+    }
+
     @media screen and (min-width: 700px) {
       min-width: 600px;
-    }
-  }
-
-  &.show {
-
-    .dropdown-menu-triangle {
-      position: absolute;
-      display: block;
-      z-index: 2000;
-      content: "";
-      width: 15px;
-      height: 15px;
-      left: 50px;
-      top: 100%;
-      margin: 13px;
-      background-color: red;
-      transform: rotate(45deg);
-      background-color: #027815;
-      border-top: 1px solid #026e13;
-      border-left: 1px solid #026e13;
     }
   }
 }
