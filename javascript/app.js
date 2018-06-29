@@ -10445,28 +10445,12 @@ module.exports = __webpack_require__(2);
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// from:https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/remove()/remove().md
-(function (arr) {
-		arr.forEach(function (item) {
-				if (item.hasOwnProperty('remove')) {
-						return;
-				}
-				Object.defineProperty(item, 'remove', {
-						configurable: true,
-						enumerable: true,
-						writable: true,
-						value: function remove() {
-								if (this.parentNode !== null) this.parentNode.removeChild(this);
-						}
-				});
-		});
-})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
-
 window._ = __webpack_require__(3);
 window.$ = window.jQuery = __webpack_require__(0);
 
 __webpack_require__(6);
 __webpack_require__(8);
+__webpack_require__(12);
 
 var _require = __webpack_require__(9),
     CourseListing = _require.CourseListing;
@@ -10483,9 +10467,9 @@ var _require3 = __webpack_require__(11),
 var courses = document.querySelectorAll('#page-course-index-category .coursebox');
 
 if (courses.length !== 0) {
-		var courseUI = new CourseListing(courses);
+	var courseUI = new CourseListing(courses);
 
-		courseUI.create();
+	courseUI.create();
 }
 
 // Training categories menu
@@ -10496,41 +10480,41 @@ categoryMenu.create();
 var enrolPage = document.getElementById("page-enrol-index");
 
 if (enrolPage !== null) {
-		var enrolePage = new EnrolPage(enrolPage);
-		enrolePage.create();
+	var enrolePage = new EnrolPage(enrolPage);
+	enrolePage.create();
 }
 
 // Course enrol tabs javascript
 window.addEventListener("load", function () {
-		// store tabs variable
-		var myTabs = document.querySelectorAll("ul.nav-tabs > li");
+	// store tabs variable
+	var myTabs = document.querySelectorAll("ul.nav-tabs > li");
 
-		function myTabClicks(tabClickEvent) {
-				for (var i = 0; i < myTabs.length; i++) {
-						myTabs[i].classList.remove("active");
-				}
-
-				var clickedTab = tabClickEvent.currentTarget;
-				clickedTab.classList.add("active");
-
-				tabClickEvent.preventDefault();
-
-				var myContentPanes = document.querySelectorAll(".tab-pane");
-
-				for (i = 0; i < myContentPanes.length; i++) {
-						myContentPanes[i].classList.remove("active");
-				}
-
-				var anchorReference = tabClickEvent.target;
-				var activePaneId = anchorReference.getAttribute("href");
-				var activePane = document.querySelector(activePaneId);
-
-				activePane.classList.add("active");
+	function myTabClicks(tabClickEvent) {
+		for (var i = 0; i < myTabs.length; i++) {
+			myTabs[i].classList.remove("active");
 		}
 
-		for (i = 0; i < myTabs.length; i++) {
-				myTabs[i].addEventListener("click", myTabClicks);
+		var clickedTab = tabClickEvent.currentTarget;
+		clickedTab.classList.add("active");
+
+		tabClickEvent.preventDefault();
+
+		var myContentPanes = document.querySelectorAll(".tab-pane");
+
+		for (i = 0; i < myContentPanes.length; i++) {
+			myContentPanes[i].classList.remove("active");
 		}
+
+		var anchorReference = tabClickEvent.target;
+		var activePaneId = anchorReference.getAttribute("href");
+		var activePane = document.querySelector(activePaneId);
+
+		activePane.classList.add("active");
+	}
+
+	for (i = 0; i < myTabs.length; i++) {
+		myTabs[i].addEventListener("click", myTabClicks);
+	}
 });
 
 // let frontpage = document.getElementById("page-site-index");
@@ -31225,7 +31209,9 @@ var EnrolPage = function () {
 			var title = link.textContent;
 			var url = link.href;
 
-			this.enrolForm.parentNode.remove();
+			if (this.enrolForm !== null) {
+				this.enrolForm.parentNode.remove();
+			}
 
 			var metadata = this.metadata();
 			var description = this.description();
@@ -31364,19 +31350,60 @@ var EnrolPage = function () {
 				});
 			}
 
-			courseHTML += '\n\t      <div class="mt-4">\n\t    ';
+			if (this.enrolForm !== null) {
 
-			courseHTML += this.enrolForm.parentNode.innerHTML;
+				courseHTML += '\n\t\t      <div class="mt-4">\n\t\t    ';
 
-			this.enrolForm.querySelector("fieldset").remove();
+				courseHTML += this.enrolForm.parentNode.innerHTML;
 
-			var submitBtn = this.enrolForm.querySelector("input[type='submit']");
+				this.enrolForm.querySelector("fieldset").remove();
 
-			submitBtn.classList.add("btn-lg");
+				var submitBtn = this.enrolForm.querySelector("input[type='submit']");
 
-			courseHTML += '\n\t    \t\t\t</div>\n\t    \t\t</div>\n\t        </div>\n\t    ';
+				submitBtn.classList.add("btn-lg");
 
-			courseHTML += '\n\t\t\t<div class="container--tabs mt-4 w-full lg:w-1/2">\n\t\t\t\t<section class="row">\n\t\t\t\t\t<ul class="nav nav-tabs">\n\t\t\t\t\t\t<li class="active"><a href="#tab-1">' + data.description.name + '</a></li>\n\n\t\t\t\t\t\t<li class=""><a href="#tab-2">' + data.objectives.name + '</a></li>\n\n\t\t\t\t\t\t<li class=""><a href="#tab-3">Teachers</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t\t<div class="tab-content">\n\t\t\t\t\t\t<div id="tab-1" class="tab-pane active"> \n\t\t\t\t\t\t\t<p>' + data.description.content + '</p>\n\t\t\t\t\t\t</div> \n\n\t\t\t\t\t\t<div id="tab-2" class="tab-pane">\n\t\t\t\t\t\t\t<p>' + data.objectives.content + '</p>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div id="tab-3" class="tab-pane">\n\t\t\t\t\t\t\t<ul class="list-reset">\n\t\t\t\t\t\t\t\t<li>Jane Doe</li>\n\t\t\t\t\t\t\t\t<li>John Doe</li>\n\t\t\t\t\t\t\t\t<li>Richard Roe</li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</section>\n\t\t\t</div>\n\t    ';
+				courseHTML += '\n\t\t    \t\t\t</div>\n\t\t    ';
+			}
+
+			courseHTML += '\n\t    \t\t</div>\n\t        </div>\n\t    ';
+
+			if (data.description.content || data.objectives.content || data.teachers.length) {
+				courseHTML += '\n\t\t\t\t<div class="container--tabs mt-4 w-full lg:w-1/2">\n\t\t\t\t\t<section class="row">\n\t\t\t\t\t\t<ul class="nav nav-tabs">\n\t\t\t';
+
+				if (data.description.content) {
+					courseHTML += '\n\t\t\t\t\t\t<li class="active"><a href="#tab-1">' + data.description.name + '</a></li>\n\t\t\t\t\t';
+				}
+
+				if (data.objectives.content) {
+					courseHTML += '\n\t\t\t\t\t\t<li class=""><a href="#tab-2">' + data.objectives.name + '</a></li>\n\t\t\t\t\t';
+				}
+
+				if (data.teachers.length) {
+					courseHTML += '\n\t\t\t\t\t\t<li class=""><a href="#tab-3">Teachers</a></li>\n\t\t\t\t\t';
+				}
+
+				courseHTML += '\n\t\t\t\t\t</ul>\n\n\t\t\t\t\t<div class="tab-content">\n\t\t\t\t';
+
+				if (data.description.content) {
+					courseHTML += '\n\t\t\t\t\t\t<div id="tab-1" class="tab-pane active"> \n\t\t\t\t\t\t\t<p>' + data.description.content + '</p>\n\t\t\t\t\t\t</div> \n\t\t\t\t\t';
+				}
+
+				if (data.objectives.content) {
+					courseHTML += '\n\t\t\t\t\t\t<div id="tab-2" class="tab-pane">\n\t\t\t\t\t\t\t<p>' + data.objectives.content + '</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t';
+				}
+
+				if (data.teachers.length) {
+					courseHTML += '\n\t\t\t\t\t\t<div id="tab-3" class="tab-pane">\n\t\t\t\t\t\t\t<ul class="list-reset">\n\t\t\t\t\t';
+
+					_.forEach(data.teachers, function (teacher) {
+						courseHTML += '\n\t\t\t\t\t\t\t<li>' + teacher + '</li>\n\t\t\t\t\t\t';
+					});
+
+					courseHTML += '\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t';
+				}
+
+				courseHTML += '\t\t\t\t\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</section>\n\t\t\t\t</div>\n\t\t    ';
+			}
 
 			this.courseBox.innerHTML = courseHTML;
 		}
@@ -31386,6 +31413,27 @@ var EnrolPage = function () {
 }();
 
 module.exports = { EnrolPage: EnrolPage };
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+// from:https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/remove()/remove().md
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('remove')) {
+      return;
+    }
+    Object.defineProperty(item, 'remove', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function remove() {
+        if (this.parentNode !== null) this.parentNode.removeChild(this);
+      }
+    });
+  });
+})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
 
 /***/ })
 /******/ ]);

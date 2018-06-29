@@ -10,8 +10,10 @@ class EnrolPage {
 	    const title = link.textContent
 	    const url = link.href
 	    
-	    this.enrolForm.parentNode.remove()
-
+	    if (this.enrolForm !== null) {
+	    	this.enrolForm.parentNode.remove()
+		}
+		
 	    const metadata = this.metadata()
 	    const description = this.description()
 	    const objectives = this.objectives()
@@ -146,54 +148,103 @@ class EnrolPage {
 	        })
 	    }
 
+	    if (this.enrolForm !== null) {
+
+		    courseHTML += `
+		      <div class="mt-4">
+		    `
+
+		    courseHTML += this.enrolForm.parentNode.innerHTML
+
+		    this.enrolForm.querySelector("fieldset").remove()
+
+		    let submitBtn = this.enrolForm.querySelector("input[type='submit']")
+
+		    submitBtn.classList.add("btn-lg")
+
+		    courseHTML += `
+		    			</div>
+		    `
+	    }
+
 	    courseHTML += `
-	      <div class="mt-4">
-	    `
-
-	    courseHTML += this.enrolForm.parentNode.innerHTML
-
-	    this.enrolForm.querySelector("fieldset").remove()
-
-	    let submitBtn = this.enrolForm.querySelector("input[type='submit']")
-
-	    submitBtn.classList.add("btn-lg")
-
-	    courseHTML += `
-	    			</div>
 	    		</div>
 	        </div>
 	    `
 
-	    courseHTML += `
-			<div class="container--tabs mt-4 w-full lg:w-1/2">
-				<section class="row">
-					<ul class="nav nav-tabs">
+	    if (data.description.content || data.objectives.content || data.teachers.length) {
+		    courseHTML += `
+				<div class="container--tabs mt-4 w-full lg:w-1/2">
+					<section class="row">
+						<ul class="nav nav-tabs">
+			`
+
+				if (data.description.content) {
+					courseHTML += `
 						<li class="active"><a href="#tab-1">${data.description.name}</a></li>
+					`
+				}
 
+				if (data.objectives.content) {
+					courseHTML += `
 						<li class=""><a href="#tab-2">${data.objectives.name}</a></li>
+					`
+				}
 
+				if (data.teachers.length) {
+					courseHTML += `
 						<li class=""><a href="#tab-3">Teachers</a></li>
+					`
+				}
+
+							
+				courseHTML += `
 					</ul>
+
 					<div class="tab-content">
+				`
+
+				if (data.description.content) {
+					courseHTML += `
 						<div id="tab-1" class="tab-pane active"> 
 							<p>${data.description.content}</p>
 						</div> 
+					`
+				}
 
+				if (data.objectives.content) {
+					courseHTML += `
 						<div id="tab-2" class="tab-pane">
 							<p>${data.objectives.content}</p>
 						</div>
-
+					`
+				}		
+							
+				if (data.teachers.length) {
+					courseHTML += `
 						<div id="tab-3" class="tab-pane">
 							<ul class="list-reset">
-								<li>Jane Doe</li>
-								<li>John Doe</li>
-								<li>Richard Roe</li>
+					`
+
+					_.forEach(data.teachers, teacher => {
+						courseHTML += `
+							<li>${teacher}</li>
+						`
+					})
+					
+					courseHTML += `
 							</ul>
 						</div>
-					</div>
-				</section>
-			</div>
-	    `
+					`
+				}
+							
+
+			courseHTML += `				
+						</div>
+					</section>
+				</div>
+		    `
+	    }
 
 	    this.courseBox.innerHTML = courseHTML
     }
