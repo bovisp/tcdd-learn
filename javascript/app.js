@@ -10530,7 +10530,7 @@ _.forEach(blocks, function (block) {
 
 // Make video player full width
 var playerWrapper = document.querySelector('.mediaplugin_videojs');
-playerWrapper.childNodes[0].style.maxWidth = '';
+playerWrapper.childNodes[0].style.maxWidth = '1280px';
 
 // let frontpage = document.getElementById("page-site-index");
 
