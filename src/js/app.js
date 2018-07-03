@@ -78,16 +78,17 @@ _.forEach(blocks, block => {
 let playerWrapper = document.querySelector('.mediaplugin_videojs')
 playerWrapper.childNodes[0].style.maxWidth = '1280px'
 
-// let frontpage = document.getElementById("page-site-index");
+// Reduce the length of course decription in slick slider
+let frontpage = document.getElementById("page-site-index");
 
-// if (frontpage) {
-//     let descriptions = document.querySelectorAll(".slick-meta2 .text_to_html");
+if (frontpage) {
+    let descriptions = document.querySelectorAll(".slick-meta2 .text_to_html");
 
-//     descriptions.forEach(description => {
-//         if (description.innerText.length > 250) {
-//             descriptionText = description.innerText;
-//             description.innerHTML = "";
-//             description.innerHTML = `${descriptionText.substring(0, 251)} <a href="#" style="text-decoration: underline;">...</a>`;
-//         }
-//     });
-// }
+    descriptions.forEach(description => {
+        if (description.innerText.length > 250) {
+            descriptionText = description.innerText;
+            description.innerHTML = "";
+            description.innerHTML = `${descriptionText.substring(0, 251)} <a href="#" style="text-decoration: underline;">...</a>`;
+        }
+    });
+}
