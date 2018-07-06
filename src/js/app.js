@@ -75,8 +75,11 @@ _.forEach(blocks, block => {
 })
 
 // Make video player full width
-let playerWrapper = document.querySelector('.mediaplugin_videojs')
-playerWrapper.childNodes[0].style.maxWidth = '1280px'
+let playerWrappers = document.querySelectorAll('.mediaplugin_videojs')
+
+_.forEach(playerWrappers, player => {
+	player.childNodes[0].style.maxWidth = '1280px'
+})
 
 // Reduce the length of course decription in slick slider
 let frontpage = document.getElementById("page-site-index");
