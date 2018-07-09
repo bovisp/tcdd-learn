@@ -97,3 +97,6 @@ $string['linkstitleurldesc'] = 'Enter the Link URL.';
 
 $string['clickhere'] = 'Click here';
 $string['newportal'] = 'to find out what\'s new in the Training Portal!';
+
+$string['trainingcategories'] = 'Training categories';
+$string['subcategories'] = 'Subcategories';
