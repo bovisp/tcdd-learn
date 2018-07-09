@@ -100,3 +100,10 @@ $string['newportal'] = 'pour voir ce qu\'il y a de neuf sur le Portail de la for
 
 $string['trainingcategories'] = 'Catégories de formation';
 $string['subcategories'] = 'Sous-catégories';
+
+$string['latestcourses'] = 'Les nouveaux cours';
+
+$string['searchcourses'] = 'Rechercher cours...';
+
+$string['msc'] = 'Service météorologique du Canada';
+$string['trainingportal'] = 'Le portail de formation';

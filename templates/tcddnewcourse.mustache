@@ -1,6 +1,6 @@
 {{#hasnewcourses}}
 
-        <h2 class="my-8">Latest courses</h2>
+        <h2 class="my-8">{{# str }} latestcourses, theme_tcdd_learn {{/ str }}</h2>
 
         <div class="hello shadow-md">
 
@@ -22,7 +22,7 @@
                                 </div>
                             </div>
 
-                            <div class="slick-meta2 h-64 flex flex-col flex-1 p-4">
+                            <div class="slick-meta2 h-64 flex flex-col flex-1 p-4" id="new-course-description">
                                 <h4 class="mb-4">Description</h4>
                                 
                                 {{{ description }}}

@@ -100,3 +100,10 @@ $string['newportal'] = 'to find out what\'s new in the Training Portal!';
 
 $string['trainingcategories'] = 'Training categories';
 $string['subcategories'] = 'Subcategories';
+
+$string['latestcourses'] = 'Latest courses';
+
+$string['searchcourses'] = 'Search courses...';
+
+$string['msc'] = 'Meteorological Service of Canada';
+$string['trainingportal'] = 'Training Portal';
