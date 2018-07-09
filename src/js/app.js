@@ -84,14 +84,33 @@ _.forEach(playerWrappers, player => {
 // Reduce the length of course decription in slick slider
 let frontpage = document.getElementById("page-site-index");
 
+const currentLang = document.documentElement.getAttribute("lang")
+
 if (frontpage) {
     let descriptions = document.querySelectorAll(".slick-meta2 .text_to_html");
 
-    descriptions.forEach(description => {
+    _.forEach(descriptions, description => {
         if (description.innerText.length > 250) {
             descriptionText = description.innerText;
             description.innerHTML = "";
             description.innerHTML = `${descriptionText.substring(0, 251)} <a href="#" style="text-decoration: underline;">...</a>`;
         }
-    });
+    })
+
+    let links = document.querySelectorAll("#links a")
+
+    _.forEach(links, link => {
+		if (currentLang === 'en') {
+			if (link.textContent.indexOf('{mlang en}') >= 0) {
+			  let textLeft = '{mlang en}'
+			  let textRight = '{mlang}{mlang fr}'
+
+			  let text = link.textContent
+
+			  let textArray = text.match(new RegExp(textLeft + "(.*)" + textRight))
+
+			  link.textContent = textArray[1]
+			}
+		}  
+	})
 }
