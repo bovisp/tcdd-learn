@@ -6,13 +6,13 @@ class CategoryMenu {
 	create () {
 		var self = this
 		
-		_.forEach(self.categories, function(category) {
+		l_forEach(self.categories, function(category) {
 		    const categoryMenuItems = document.querySelectorAll('.tabs-menu div');
 
 		    category.addEventListener('mouseover', function(e) {
 		        let itemNumber = (e.target.id)[e.target.id.length - 1];
 
-		        _.forEach(categoryMenuItems, function(item) {
+		        l_forEach(categoryMenuItems, function(item) {
 		            item.style.display = 'none';
 		        });
 

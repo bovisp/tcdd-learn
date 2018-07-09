@@ -5,7 +5,7 @@ class CourseListing {
 
     create () {
         var self = this
-        _.forEach(self.courses, function(course) {
+        l_forEach(self.courses, function(course) {
             course.classList.remove('clearfix', 'odd', 'first', 'even', 'last')
             course.classList.add('p-0', 'my-4')
 
@@ -85,7 +85,7 @@ class CourseListing {
     image (course) {
         const courseImage = course.querySelector('.courseimage img')
 
-        return courseImage !== null ? courseImage.src : 'https://picsum.photos/300/300/?image=543'
+        return courseImage !== null ? courseImage.src : 'https://picsum.photos/300/300/?image=1056'
     }
 
     teachers (course) {
@@ -94,7 +94,7 @@ class CourseListing {
         let teacherNames = []
 
         if (courseTeachers.length > 0) {
-            _.forEach(courseTeachers, teacher => {
+            l_forEach(courseTeachers, teacher => {
                 teacherNames.push(teacher.textContent)
             })
         }
@@ -125,7 +125,7 @@ class CourseListing {
         `
 
         if (Object.keys(data.metadata).length > 0) {
-            _.forEach(Object.keys(data.metadata), key => {
+            l_forEach(Object.keys(data.metadata), key => {
                 if (data.metadata[key].name !== "") {
                     courseHTML += `
                       <p class="mb-0">

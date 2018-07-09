@@ -1,4 +1,4 @@
-window._ = require('lodash');
+window.l_forEach = require('lodash.foreach');
 window.$ = window.jQuery = require('jquery')
 
 require('./components/slick')
@@ -14,7 +14,7 @@ const currentLang = document.documentElement.getAttribute("lang")
 function tcddTranslateString (selector) {
 	let elements = document.querySelectorAll(selector)
 
-	_.forEach(elements, element => {
+	l_forEach(elements, element => {
 		if (currentLang === 'en') {
 			if (element.textContent.indexOf('{mlang en}') >= 0) {
 			  let textLeft = '{mlang en}'
@@ -98,7 +98,7 @@ window.addEventListener("load", function() {
 // Delete Manager Tools block
 const blocks = document.querySelectorAll('.block')
 
-_.forEach(blocks, block => {
+l_forEach(blocks, block => {
   let header = block.querySelector('h5')
 
   if (header.textContent === 'Manager Tools') {
@@ -109,7 +109,7 @@ _.forEach(blocks, block => {
 // Make video player full width
 let playerWrappers = document.querySelectorAll('.mediaplugin_videojs')
 
-_.forEach(playerWrappers, player => {
+l_forEach(playerWrappers, player => {
 	player.childNodes[0].style.maxWidth = '1280px'
 })
 
@@ -119,7 +119,7 @@ let frontpage = document.getElementById("page-site-index");
 if (frontpage) {
     let descriptions = document.querySelectorAll(".slick-meta2 .text_to_html");
 
-    _.forEach(descriptions, description => {
+    l_forEach(descriptions, description => {
         if (description.innerText.length > 250) {
             descriptionText = description.innerText;
             description.innerHTML = "";

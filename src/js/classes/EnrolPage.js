@@ -137,7 +137,7 @@ class EnrolPage {
 	    `
 
 	    if (Object.keys(data.metadata).length > 0) {
-	        Object.keys(data.metadata).forEach(key => {
+	        l_forEach(Object.keys(data.metadata), key => {
 	            if (data.metadata[key].name !== "") {
 	                courseHTML += `
 	                  <p class="mb-0">
