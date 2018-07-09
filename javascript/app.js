@@ -10461,9 +10461,39 @@ var _require2 = __webpack_require__(11),
 var _require3 = __webpack_require__(12),
     EnrolPage = _require3.EnrolPage;
 
+var currentLang = document.documentElement.getAttribute("lang");
+
+function tcddTranslateString(selector) {
+	var elements = document.querySelectorAll(selector);
+
+	_.forEach(elements, function (element) {
+		if (currentLang === 'en') {
+			if (element.textContent.indexOf('{mlang en}') >= 0) {
+				var textLeft = '{mlang en}';
+				var textRight = '{mlang}{mlang fr}';
+
+				var text = element.textContent;
+
+				var textArray = text.match(new RegExp(textLeft + "(.*)" + textRight));
+
+				element.textContent = textArray[1];
+			}
+		} else {
+			if (element.textContent.indexOf('{mlang fr}') >= 0) {
+				var _textLeft = '{mlang fr}';
+				var _textRight = '{mlang}';
+
+				var _text = element.textContent;
+
+				var _textArray = _text.match(new RegExp(_textLeft + "(.*)" + _textRight));
+
+				element.textContent = _textArray[1];
+			}
+		}
+	});
+}
+
 // Course listing page.
-
-
 var courses = document.querySelectorAll('#page-course-index-category .coursebox');
 
 if (courses.length !== 0) {
@@ -10538,8 +10568,6 @@ _.forEach(playerWrappers, function (player) {
 // Reduce the length of course decription in slick slider
 var frontpage = document.getElementById("page-site-index");
 
-var currentLang = document.documentElement.getAttribute("lang");
-
 if (frontpage) {
 	var descriptions = document.querySelectorAll(".slick-meta2 .text_to_html");
 
@@ -10551,34 +10579,12 @@ if (frontpage) {
 		}
 	});
 
-	var links = document.querySelectorAll("#links a");
-
-	_.forEach(links, function (link) {
-		if (currentLang === 'en') {
-			if (link.textContent.indexOf('{mlang en}') >= 0) {
-				var textLeft = '{mlang en}';
-				var textRight = '{mlang}{mlang fr}';
-
-				var text = link.textContent;
-
-				var textArray = text.match(new RegExp(textLeft + "(.*)" + textRight));
-
-				link.textContent = textArray[1];
-			}
-		} else {
-			if (link.textContent.indexOf('{mlang fr}') >= 0) {
-				var _textLeft = '{mlang fr}';
-				var _textRight = '{mlang}';
-
-				var _text = link.textContent;
-
-				var _textArray = _text.match(new RegExp(_textLeft + "(.*)" + _textRight));
-
-				link.textContent = _textArray[1];
-			}
-		}
-	});
+	tcddTranslateString('#links a');
 }
+
+// translate category menu top level categories
+tcddTranslateString('#category-menu .tcdd_tabs');
+tcddTranslateString('#category-menu a');
 
 /***/ }),
 /* 3 */

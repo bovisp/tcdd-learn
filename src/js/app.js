@@ -9,6 +9,38 @@ const { CourseListing } = require('./classes/CourseListing')
 const { CategoryMenu } = require('./classes/CategoryMenu')
 const { EnrolPage } = require('./classes/EnrolPage')
 
+const currentLang = document.documentElement.getAttribute("lang")
+
+function tcddTranslateString (selector) {
+	let elements = document.querySelectorAll(selector)
+
+	_.forEach(elements, element => {
+		if (currentLang === 'en') {
+			if (element.textContent.indexOf('{mlang en}') >= 0) {
+			  let textLeft = '{mlang en}'
+			  let textRight = '{mlang}{mlang fr}'
+
+			  let text = element.textContent
+
+			  let textArray = text.match(new RegExp(textLeft + "(.*)" + textRight))
+
+			  element.textContent = textArray[1]
+			}
+		} else {
+			if (element.textContent.indexOf('{mlang fr}') >= 0) {
+			  let textLeft = '{mlang fr}'
+			  let textRight = '{mlang}'
+
+			  let text = element.textContent
+
+			  let textArray = text.match(new RegExp(textLeft + "(.*)" + textRight))
+
+			  element.textContent = textArray[1]
+			}
+		}
+	})
+}
+
 // Course listing page.
 const courses = document.querySelectorAll('#page-course-index-category .coursebox')
 
@@ -84,8 +116,6 @@ _.forEach(playerWrappers, player => {
 // Reduce the length of course decription in slick slider
 let frontpage = document.getElementById("page-site-index");
 
-const currentLang = document.documentElement.getAttribute("lang")
-
 if (frontpage) {
     let descriptions = document.querySelectorAll(".slick-meta2 .text_to_html");
 
@@ -97,31 +127,9 @@ if (frontpage) {
         }
     })
 
-    let links = document.querySelectorAll("#links a")
-
-    _.forEach(links, link => {
-		if (currentLang === 'en') {
-			if (link.textContent.indexOf('{mlang en}') >= 0) {
-			  let textLeft = '{mlang en}'
-			  let textRight = '{mlang}{mlang fr}'
-
-			  let text = link.textContent
-
-			  let textArray = text.match(new RegExp(textLeft + "(.*)" + textRight))
-
-			  link.textContent = textArray[1]
-			}
-		} else {
-			if (link.textContent.indexOf('{mlang fr}') >= 0) {
-			  let textLeft = '{mlang fr}'
-			  let textRight = '{mlang}'
-
-			  let text = link.textContent
-
-			  let textArray = text.match(new RegExp(textLeft + "(.*)" + textRight))
-
-			  link.textContent = textArray[1]
-			}
-		}  
-	})
+    tcddTranslateString('#links a')
 }
+
+// translate category menu top level categories
+tcddTranslateString('#category-menu .tcdd_tabs')
+tcddTranslateString('#category-menu a')
