@@ -13,21 +13,19 @@
                             <div class="slick-image h-64 w-64 bg-cover bg-no-repeat bg-left-top {{{tileimage}}}"></div>
 
                             <div class="slick-meta1 h-64 flex-1 p-4 border-r border-l-0 border-b-0 border-t-0 border-solid border-grey-lighter">
-                                <h3 class="mb-4">
+                                <h3 class="mb-4" id="new-course-title">
                                     <a href="{{{ url }}}">{{{ title }}}</a>   
                                 </h3>
 
-                                <div class="content">
+                                <div class="content" id="new-course-meta">
                                     {{{ metacontent }}}
                                 </div>
                             </div>
 
                             <div class="slick-meta2 h-64 flex flex-col flex-1 p-4">
-                                <h4>Description</h4>
-
-                                <p class="flex-1">
-                                    {{{ description }}}
-                                </p>
+                                <h4 class="mb-4">Description</h4>
+                                
+                                {{{ description }}}
                             </div>
                         </div>
                     </article>

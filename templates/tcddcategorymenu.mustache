@@ -9,7 +9,7 @@
             aria-haspopup="true" 
             aria-expanded="false"
         >
-            Training categories
+            {{# str }} trainingcategories, theme_tcdd_learn {{/ str }}
         </button>
 
         <div class="dropdown-menu-triangle"></div>
@@ -32,7 +32,7 @@
 
                 <div class="w-2/3 tabs-menu">
                     {{#hassubcategory1}}
-                        <p class="font-bold">Subcategories</p>
+                        <p class="font-bold">{{# str }} subcategories, theme_tcdd_learn {{/ str }}</p>
                         <div id="menuItem-1" style="display: block;">
                             <ul class="list-reset">
                                 {{#subcategory1items}}
