@@ -111,6 +111,17 @@ if (frontpage) {
 
 			  link.textContent = textArray[1]
 			}
+		} else {
+			if (link.textContent.indexOf('{mlang fr}') >= 0) {
+			  let textLeft = '{mlang fr}'
+			  let textRight = '{mlang}'
+
+			  let text = link.textContent
+
+			  let textArray = text.match(new RegExp(textLeft + "(.*)" + textRight))
+
+			  link.textContent = textArray[1]
+			}
 		}  
 	})
 }

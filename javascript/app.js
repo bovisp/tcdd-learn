@@ -10565,6 +10565,17 @@ if (frontpage) {
 
 				link.textContent = textArray[1];
 			}
+		} else {
+			if (link.textContent.indexOf('{mlang fr}') >= 0) {
+				var _textLeft = '{mlang fr}';
+				var _textRight = '{mlang}';
+
+				var _text = link.textContent;
+
+				var _textArray = _text.match(new RegExp(_textLeft + "(.*)" + _textRight));
+
+				link.textContent = _textArray[1];
+			}
 		}
 	});
 }
