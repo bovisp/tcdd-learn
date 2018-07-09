@@ -107,3 +107,5 @@ $string['searchcourses'] = 'Search courses...';
 
 $string['msc'] = 'Meteorological Service of Canada';
 $string['trainingportal'] = 'Training Portal';
+
+$string['links'] = 'Links';
