@@ -284,7 +284,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $hascategorymenu1sub10 = (empty($PAGE->theme->settings->categorymenu1sub10)) ? false :format_text( $PAGE->theme->settings->categorymenu1sub10);
         $categorymenu1urlsub10 = (empty($PAGE->theme->settings->categorymenu1sub10url)) ? false : $PAGE->theme->settings->categorymenu1sub10url;
 
-        $hascategorymenu2 = (empty($PAGE->theme->settings->categorymenu2)) ? false : format_text($PAGE->theme->settings->categorymenu2;
+        $hascategorymenu2 = (empty($PAGE->theme->settings->categorymenu2)) ? false : format_text($PAGE->theme->settings->categorymenu2);
         $categorymenu2url = (empty($PAGE->theme->settings->categorymenu2url)) ? false : $PAGE->theme->settings->categorymenu2url;
 
         $hascategorymenu2sub1 = (empty($PAGE->theme->settings->categorymenu2sub1)) ? false : format_text($PAGE->theme->settings->categorymenu2sub1);
@@ -308,7 +308,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $hascategorymenu2sub10 = (empty($PAGE->theme->settings->categorymenu2sub10)) ? false : format_text($PAGE->theme->settings->categorymenu2sub10);
         $categorymenu2urlsub10 = (empty($PAGE->theme->settings->categorymenu2sub10url)) ? false : $PAGE->theme->settings->categorymenu2sub10url;
 
-        $hascategorymenu3 = (empty($PAGE->theme->settings->categorymenu3)) ? false :  format_text($PAGE->theme->settings->categorymenu3;
+        $hascategorymenu3 = (empty($PAGE->theme->settings->categorymenu3)) ? false :  format_text($PAGE->theme->settings->categorymenu3);
         $categorymenu3url = (empty($PAGE->theme->settings->categorymenu3url)) ? false : $PAGE->theme->settings->categorymenu3url;
 
         $hascategorymenu3sub1 = (empty($PAGE->theme->settings->categorymenu3sub1)) ? false :  format_text($PAGE->theme->settings->categorymenu3sub1);
@@ -332,7 +332,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $hascategorymenu3sub10 = (empty($PAGE->theme->settings->categorymenu3sub10)) ? false :  format_text($PAGE->theme->settings->categorymenu3sub10);
         $categorymenu3urlsub10 = (empty($PAGE->theme->settings->categorymenu3sub10url)) ? false : $PAGE->theme->settings->categorymenu3sub10url;
 
-        $hascategorymenu4 = (empty($PAGE->theme->settings->categorymenu4)) ? false :  format_text($PAGE->theme->settings->categorymenu4;
+        $hascategorymenu4 = (empty($PAGE->theme->settings->categorymenu4)) ? false :  format_text($PAGE->theme->settings->categorymenu4);
         $categorymenu4url = (empty($PAGE->theme->settings->categorymenu4url)) ? false : $PAGE->theme->settings->categorymenu4url;
 
         $hascategorymenu4sub1 = (empty($PAGE->theme->settings->categorymenu4sub1)) ? false :  format_text($PAGE->theme->settings->categorymenu4sub1);
