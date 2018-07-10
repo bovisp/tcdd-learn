@@ -135,17 +135,17 @@ tcddTranslateString('#category-menu .tcdd_tabs')
 tcddTranslateString('#category-menu a')
 
 // translate calendar
-if (currentLang === 'fr') {
-	document.body.innerHTML = document.body.innerHTML.replace('January', 'janvier')
-	document.body.innerHTML = document.body.innerHTML.replace('February', 'février')
-	document.body.innerHTML = document.body.innerHTML.replace('March', 'mars')
-	document.body.innerHTML = document.body.innerHTML.replace('April', 'avril')
-	document.body.innerHTML = document.body.innerHTML.replace('May', 'mai')
-	document.body.innerHTML = document.body.innerHTML.replace('June', 'juin')
-	document.body.innerHTML = document.body.innerHTML.replace('July', 'juillet')
-	document.body.innerHTML = document.body.innerHTML.replace('August', 'août')
-	document.body.innerHTML = document.body.innerHTML.replace('September', 'septembre')
-	document.body.innerHTML = document.body.innerHTML.replace('October', 'octobre')
-	document.body.innerHTML = document.body.innerHTML.replace('November', 'novembre')
-	document.body.innerHTML = document.body.innerHTML.replace('December', 'décembre')
-}
+// if (currentLang === 'fr') {
+// 	document.body.innerHTML = document.body.innerHTML.replace('January', 'janvier')
+// 	document.body.innerHTML = document.body.innerHTML.replace('February', 'février')
+// 	document.body.innerHTML = document.body.innerHTML.replace('March', 'mars')
+// 	document.body.innerHTML = document.body.innerHTML.replace('April', 'avril')
+// 	document.body.innerHTML = document.body.innerHTML.replace('May', 'mai')
+// 	document.body.innerHTML = document.body.innerHTML.replace('June', 'juin')
+// 	document.body.innerHTML = document.body.innerHTML.replace('July', 'juillet')
+// 	document.body.innerHTML = document.body.innerHTML.replace('August', 'août')
+// 	document.body.innerHTML = document.body.innerHTML.replace('September', 'septembre')
+// 	document.body.innerHTML = document.body.innerHTML.replace('October', 'octobre')
+// 	document.body.innerHTML = document.body.innerHTML.replace('November', 'novembre')
+// 	document.body.innerHTML = document.body.innerHTML.replace('December', 'décembre')
+// }
