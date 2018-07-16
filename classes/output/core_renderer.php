@@ -580,22 +580,22 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 array(
                     'hascategory' => $hascategorymenu1,
                     'title' => $hascategorymenu1,
-                    'button' => "<button class='tcdd_tabs' id='menuButton-1' title='$hascategorymenu1'>$hascategorymenu1</button>"
+                    'button' => "<button class='tcdd_tabs' id='menuButton-1'>$hascategorymenu1</button>"
                 ),
                 array(
                     'hascategory' => $hascategorymenu2,
                     'title' => $hascategorymenu2,
-                    'button' => "<button class='tcdd_tabs' id='menuButton-2' title='$hascategorymenu2'>$hascategorymenu2</button>"
+                    'button' => "<button class='tcdd_tabs' id='menuButton-2'>$hascategorymenu2</button>"
                 ) ,
                 array(
                     'hascategory' => $hascategorymenu3,
                     'title' => $hascategorymenu3,
-                    'button' => "<button class='tcdd_tabs' id='menuButton-3' title='$hascategorymenu3'>$hascategorymenu3</button>"
+                    'button' => "<button class='tcdd_tabs' id='menuButton-3'>$hascategorymenu3</button>"
                 ) ,
                 array(
                     'hascategory' => $hascategorymenu4,
                     'title' => $hascategorymenu4,
-                    'button' => "<button class='tcdd_tabs' id='menuButton-4' title='$hascategorymenu4'>$hascategorymenu4</button>"
+                    'button' => "<button class='tcdd_tabs' id='menuButton-4'>$hascategorymenu4</button>"
                 )
             ) 
         ];
