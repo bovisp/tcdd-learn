@@ -109,3 +109,5 @@ $string['msc'] = 'Meteorological Service of Canada';
 $string['trainingportal'] = 'Training Portal';
 
 $string['links'] = 'Links';
+
+$string['logo'] = 'http://msc-educ-smc.cmc.ec.gc.ca/moodle/images/logo_en.png';
