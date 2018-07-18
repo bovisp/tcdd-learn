@@ -854,6 +854,47 @@ $setting = new admin_setting_configtext($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+// This is the heading text for Category 5
+$name = 'theme_tcdd_learn/categorymenu5info';
+$heading = get_string('categorymenu5', 'theme_tcdd_learn');
+$information = get_string('categorymenuinfodesc', 'theme_tcdd_learn');
+$setting = new admin_setting_heading($name, $heading, $information);
+$page->add($setting);
 
+// Category 5 title
+$name = 'theme_tcdd_learn/categorymenu5';
+$title = get_string('categorymenutitle', 'theme_tcdd_learn');
+$description = get_string('categorymenutitledesc', 'theme_tcdd_learn');
+$default = '';
+$setting = new admin_setting_configtext($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+// Category 5 URL
+$name = 'theme_tcdd_learn/categorymenu5url';
+$title = get_string('categorymenuurl', 'theme_tcdd_learn');
+$description = get_string('categorymenuurldesc', 'theme_tcdd_learn');
+$default = '';
+$setting = new admin_setting_configtext($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+// Category 5 Subcategory 1 title
+$name = 'theme_tcdd_learn/categorymenu5sub1';
+$title = get_string('categorymenusubtitle', 'theme_tcdd_learn');
+$description = get_string('categorymenusubtitledesc', 'theme_tcdd_learn');
+$default = '';
+$setting = new admin_setting_configtext($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+// Category 5 Subcategory 1 title URL
+$name = 'theme_tcdd_learn/categorymenu5sub1url';
+$title = get_string('categorymenusuburl', 'theme_tcdd_learn');
+$description = get_string('categorymenusuburldesc', 'theme_tcdd_learn');
+$default = '';
+$setting = new admin_setting_configtext($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
 
 $settings->add($page);

@@ -87,6 +87,20 @@
                             </ul>
                         </div>
                     {{/hassubcategory4}}
+
+                    {{#hassubcategory5}}
+                        <div id="menuItem-5" style="display: none;">
+                            <ul class="list-reset">
+                                {{#subcategory5items}}
+                                    {{#hassubcategoryitem}}
+                                        <li>
+                                            <a href="{{{ url }}}">{{{ subtitle }}}</a>
+                                        </li>
+                                    {{/hassubcategoryitem}}
+                                {{/subcategory5items}}
+                            </ul>
+                        </div>
+                    {{/hassubcategory5}}
                 </div>
             </div>
         </div>

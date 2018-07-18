@@ -356,13 +356,20 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $hascategorymenu4sub10 = (empty($PAGE->theme->settings->categorymenu4sub10)) ? false : $PAGE->theme->settings->categorymenu4sub10;
         $categorymenu4urlsub10 = (empty($PAGE->theme->settings->categorymenu4sub10url)) ? false : $PAGE->theme->settings->categorymenu4sub10url;
 
+        $hascategorymenu5 = (empty($PAGE->theme->settings->categorymenu5)) ? false : $PAGE->theme->settings->categorymenu5;
+        $categorymenu5url = (empty($PAGE->theme->settings->categorymenu5url)) ? false : $PAGE->theme->settings->categorymenu5url;
+
+        $hascategorymenu5sub1 = (empty($PAGE->theme->settings->categorymenu5sub1)) ? false : $PAGE->theme->settings->categorymenu5sub1;
+        $categorymenu5urlsub1 = (empty($PAGE->theme->settings->categorymenu5sub1url)) ? false : $PAGE->theme->settings->categorymenu5sub1url;
+
         $tcdd_categorymenucontext = [
-            'hascategorymenus' => ($hascategorymenu1 || $hascategorymenu2 || $hascategorymenu3 || $hascategorymenu4) ? true : false,
+            'hascategorymenus' => ($hascategorymenu1 || $hascategorymenu2 || $hascategorymenu3 || $hascategorymenu4 || $hascategorymenu5) ? true : false,
 
             'hassubcategory1' => $hascategorymenu1sub1 ? true : false,
             'hassubcategory2' => $hascategorymenu2sub1 ? true : false,
             'hassubcategory3' => $hascategorymenu3sub1 ? true : false,
             'hassubcategory4' => $hascategorymenu4sub1 ? true : false,
+            'hassubcategory5' => $hascategorymenu5sub1 ? true : false,
 
             'subcategory1items' => array(
                 array(
@@ -576,6 +583,14 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 ) 
             ),
 
+            'subcategory5items' => array(
+                array(
+                    'hassubcategoryitem' => $hascategorymenu5sub1,
+                    'subtitle' => $hascategorymenu5sub1,
+                    'url' => $categorymenu5urlsub1
+                ) 
+            ),
+
             'categorymenus' => array(
                 array(
                     'hascategory' => $hascategorymenu1,
@@ -596,6 +611,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
                     'hascategory' => $hascategorymenu4,
                     'title' => $hascategorymenu4,
                     'button' => "<button class='tcdd_tabs' id='menuButton-4'>$hascategorymenu4</button>"
+                ),
+                array(
+                    'hascategory' => $hascategorymenu5,
+                    'title' => $hascategorymenu5,
+                    'button' => "<button class='tcdd_tabs' id='menuButton-5'>$hascategorymenu5</button>"
                 )
             ) 
         ];

@@ -67,6 +67,7 @@ $string['categorymenu1'] = 'Category Menu Item One';
 $string['categorymenu2'] = 'Category Menu Item Two';
 $string['categorymenu3'] = 'Category Menu Item Three';
 $string['categorymenu4'] = 'Category Menu Item Four';
+$string['categorymenu5'] = 'Category Menu Item Five';
 $string['categorymenuinfodesc'] = 'Add the title and URL of this category. If there are any sub-categories underneath this category, please enter the titles and URLs of these as well.';
 $string['categorymenutitle'] = 'Category title';
 $string['categorymenusubtitle'] = 'Subcategory title';
