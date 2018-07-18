@@ -111,3 +111,5 @@ $string['trainingportal'] = 'Le portail de formation';
 $string['links'] = 'Liens';
 
 $string['logo'] = 'http://msc-educ-smc.cmc.ec.gc.ca/moodle/images/logo_fr.png';
+
+$string['contactmessage'] = 'Vous pouvez communiquer avec la Division de la formation et du perfectionnement professionnel (DFPP) à :';
