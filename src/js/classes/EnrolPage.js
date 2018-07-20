@@ -10,7 +10,7 @@ class EnrolPage {
 	    const title = link.textContent
 	    const url = link.href
 	    
-	    if (this.enrolForm !== null) {
+	    if (this.enrolForm) {
 	    	this.enrolForm.parentNode.remove()
 		}
 		

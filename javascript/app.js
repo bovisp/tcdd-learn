@@ -14704,7 +14704,7 @@ var EnrolPage = function () {
 			var title = link.textContent;
 			var url = link.href;
 
-			if (this.enrolForm !== null) {
+			if (this.enrolForm) {
 				this.enrolForm.parentNode.remove();
 			}
 
