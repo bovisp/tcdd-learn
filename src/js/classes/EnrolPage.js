@@ -3,6 +3,7 @@ class EnrolPage {
 		this.course = course
 		this.courseBox = document.querySelector('.coursebox')
 		this.enrolForm = document.querySelector('.mform')
+		console.log(this.enrolForm)
 	}
 
 	create () {
@@ -149,8 +150,6 @@ class EnrolPage {
 	    }
 
 	    if (this.enrolForm) {
-	    	console.log("here")
-
 		    courseHTML += `
 		      <div class="mt-4">
 		    `

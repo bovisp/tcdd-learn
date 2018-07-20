@@ -14695,6 +14695,7 @@ var EnrolPage = function () {
 		this.course = course;
 		this.courseBox = document.querySelector('.coursebox');
 		this.enrolForm = document.querySelector('.mform');
+		console.log(this.enrolForm);
 	}
 
 	_createClass(EnrolPage, [{
@@ -14846,8 +14847,6 @@ var EnrolPage = function () {
 			}
 
 			if (this.enrolForm) {
-				console.log("here");
-
 				courseHTML += '\n\t\t      <div class="mt-4">\n\t\t    ';
 
 				courseHTML += this.enrolForm.parentNode.innerHTML;
