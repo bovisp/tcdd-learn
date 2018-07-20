@@ -115,4 +115,4 @@ $string['logo'] = 'http://msc-educ-smc.cmc.ec.gc.ca/moodle/images/logo_fr.png';
 
 $string['contactmessage'] = 'Vous pouvez communiquer avec la Division de la formation et du perfectionnement professionnel (DFPP) à :';
 
-$string['frontpagewarning'] = 'Afin que tous nos employés mieux repèrent les ressources correspondant à leurs besoins d’apprentissage sur le nouveau portail de formation, tous les pages des cours vont adhérer à un format officiel. Ainsi, des images de bannière, des descriptions des cours et des objectifs d’apprentissage seront ajoutés aux pages de cours dans les prochains mois. Merci de votre patience!';
+$string['frontpagewarning'] = 'Bienvenue à cette nouvelle version du Portail de formation! Vous verrez certaines améliorations dans la présentation du site incluant la définition d’objectifs d’apprentissage associés aux modules de formation. S’il-vous-plaît prenez note que le travail n’est pas fini pour certaines parties du portail. Par exemple, la conversion vers le nouveau format de présentation reste à être complétée pour certains modules. Merci pour votre patience.';

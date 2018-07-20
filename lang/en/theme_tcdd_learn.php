@@ -115,4 +115,4 @@ $string['logo'] = 'http://msc-educ-smc.cmc.ec.gc.ca/moodle/images/logo_en.png';
 
 $string['contactmessage'] = 'You may contact the Training and Career Development Division (TCDD) at:';
 
-$string['frontpagewarning'] = 'To ensure that our employees easily identify training material on our Training Portal that meets their learning needs, all course pages will adhere to an official format. Banner images, course descriptions and learning objectives (where applicable) will be added to each course page in the following months. Thank you for your patience!';
+$string['frontpagewarning'] = 'Welcome to the new version of the Training Portal!  You will notice a few new features which will better define the available material on this site including learning objectives relevant to training. Please note, however, that work is still in progress and not all available material have been converted to new formats. Thank you for your patience.';
