@@ -148,7 +148,8 @@ class EnrolPage {
 	        })
 	    }
 
-	    if (this.enrolForm !== null) {
+	    if (this.enrolForm) {
+	    	console.log("here")
 
 		    courseHTML += `
 		      <div class="mt-4">

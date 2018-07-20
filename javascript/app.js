@@ -14845,7 +14845,8 @@ var EnrolPage = function () {
 				});
 			}
 
-			if (this.enrolForm !== null) {
+			if (this.enrolForm) {
+				console.log("here");
 
 				courseHTML += '\n\t\t      <div class="mt-4">\n\t\t    ';
 
