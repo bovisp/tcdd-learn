@@ -14695,7 +14695,6 @@ var EnrolPage = function () {
 		this.course = course;
 		this.courseBox = document.querySelector('.coursebox');
 		this.enrolForm = document.querySelector('.mform');
-		console.log(this.enrolForm);
 	}
 
 	_createClass(EnrolPage, [{
@@ -14705,7 +14704,7 @@ var EnrolPage = function () {
 			var title = link.textContent;
 			var url = link.href;
 
-			if (this.enrolForm) {
+			if (this.enrolForm !== null) {
 				this.enrolForm.parentNode.remove();
 			}
 
@@ -14846,7 +14845,7 @@ var EnrolPage = function () {
 				});
 			}
 
-			if (this.enrolForm) {
+			if (this.enrolForm !== null) {
 				courseHTML += '\n\t\t      <div class="mt-4">\n\t\t    ';
 
 				courseHTML += this.enrolForm.parentNode.innerHTML;
@@ -14855,7 +14854,9 @@ var EnrolPage = function () {
 
 				var submitBtn = this.enrolForm.querySelector("input[type='submit']");
 
-				submitBtn.classList.add("btn-lg");
+				if (submitBtn) {
+					submitBtn.classList.add("btn-lg");
+				}
 
 				courseHTML += '\n\t\t    \t\t\t</div>\n\t\t    ';
 			}

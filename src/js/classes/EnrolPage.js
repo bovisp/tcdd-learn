@@ -3,7 +3,6 @@ class EnrolPage {
 		this.course = course
 		this.courseBox = document.querySelector('.coursebox')
 		this.enrolForm = document.querySelector('.mform')
-		console.log(this.enrolForm)
 	}
 
 	create () {
@@ -11,7 +10,7 @@ class EnrolPage {
 	    const title = link.textContent
 	    const url = link.href
 	    
-	    if (this.enrolForm) {
+	    if (this.enrolForm !== null) {
 	    	this.enrolForm.parentNode.remove()
 		}
 		
@@ -149,7 +148,7 @@ class EnrolPage {
 	        })
 	    }
 
-	    if (this.enrolForm) {
+	    if (this.enrolForm !== null) {
 		    courseHTML += `
 		      <div class="mt-4">
 		    `
@@ -160,7 +159,9 @@ class EnrolPage {
 
 		    let submitBtn = this.enrolForm.querySelector("input[type='submit']")
 
-		    submitBtn.classList.add("btn-lg")
+		    if (submitBtn) {
+		    	submitBtn.classList.add("btn-lg")
+		    }
 
 		    courseHTML += `
 		    			</div>
