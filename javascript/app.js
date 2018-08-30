@@ -14713,9 +14713,10 @@ var EnrolPage = function () {
 			var objectives = this.objectives();
 			var image = this.image();
 			var teachers = this.teachers();
+			var teacherText = document.querySelector('#teacher').textContent;
 
 			var courseData = {
-				title: title, url: url, image: image, teachers: teachers, metadata: metadata, description: description, objectives: objectives
+				title: title, url: url, image: image, teachers: teachers, teacherText: teacherText, metadata: metadata, description: description, objectives: objectives
 			};
 
 			this.makeUI(courseData);
@@ -14797,7 +14798,7 @@ var EnrolPage = function () {
 		key: 'objectives',
 		value: function objectives() {
 			var name = this.getMetadata(document.querySelector('#objectives'));
-			var content = this.getMetadata(document.querySelector('#objectives-content'));
+			var content = document.querySelector('#objectives-content').innerHTML;
 
 			return { name: name, content: content };
 		}
@@ -14816,7 +14817,7 @@ var EnrolPage = function () {
 			var teacherNames = [];
 
 			if (courseTeachers.length > 0) {
-				_.forEach(courseTeachers, function (teacher) {
+				l_forEach(courseTeachers, function (teacher) {
 					teacherNames.push(teacher.textContent);
 				});
 			}
@@ -14875,23 +14876,23 @@ var EnrolPage = function () {
 				}
 
 				if (data.teachers.length) {
-					courseHTML += '\n\t\t\t\t\t\t<li class=""><a href="#tab-3">Teachers</a></li>\n\t\t\t\t\t';
+					courseHTML += '\n\t\t\t\t\t\t<li class=""><a href="#tab-3">' + data.teacherText + '</a></li>\n\t\t\t\t\t';
 				}
 
 				courseHTML += '\n\t\t\t\t\t</ul>\n\n\t\t\t\t\t<div class="tab-content">\n\t\t\t\t';
 
 				if (data.description.content) {
-					courseHTML += '\n\t\t\t\t\t\t<div id="tab-1" class="tab-pane active"> \n\t\t\t\t\t\t\t<p>' + data.description.content + '</p>\n\t\t\t\t\t\t</div> \n\t\t\t\t\t';
+					courseHTML += '\n\t\t\t\t\t\t<div id="tab-1" class="tab-pane active"> \n\t\t\t\t\t\t\t' + data.description.content + '\n\t\t\t\t\t\t</div> \n\t\t\t\t\t';
 				}
 
 				if (data.objectives.content) {
-					courseHTML += '\n\t\t\t\t\t\t<div id="tab-2" class="tab-pane">\n\t\t\t\t\t\t\t<p>' + data.objectives.content + '</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t';
+					courseHTML += '\n\t\t\t\t\t\t<div id="tab-2" class="tab-pane"> \n\t\t\t\t\t\t\t' + data.objectives.content + '\n\t\t\t\t\t\t</div> \n\t\t\t\t\t';
 				}
 
 				if (data.teachers.length) {
 					courseHTML += '\n\t\t\t\t\t\t<div id="tab-3" class="tab-pane">\n\t\t\t\t\t\t\t<ul class="list-reset">\n\t\t\t\t\t';
 
-					_.forEach(data.teachers, function (teacher) {
+					l_forEach(data.teachers, function (teacher) {
 						courseHTML += '\n\t\t\t\t\t\t\t<li>' + teacher + '</li>\n\t\t\t\t\t\t';
 					});
 

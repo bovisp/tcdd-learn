@@ -19,9 +19,10 @@ class EnrolPage {
 	    const objectives = this.objectives()
 	    const image = this.image()
 	    const teachers = this.teachers()
+	    const teacherText = document.querySelector('#teacher').textContent
 
 	    const courseData = {
-            title, url, image, teachers, metadata, description, objectives
+            title, url, image, teachers, teacherText, metadata, description, objectives
         }
 
         this.makeUI(courseData)
@@ -89,7 +90,7 @@ class EnrolPage {
 
     objectives () {
 	    let name = this.getMetadata(document.querySelector('#objectives'))
-	    let content = this.getMetadata(document.querySelector('#objectives-content'))
+	    let content = document.querySelector('#objectives-content').innerHTML
 
 	    return { name, content }
     }
@@ -106,7 +107,7 @@ class EnrolPage {
         let teacherNames = []
 
         if (courseTeachers.length > 0) {
-	        _.forEach(courseTeachers, teacher => {
+	        l_forEach(courseTeachers, teacher => {
 	            teacherNames.push(teacher.textContent)
 	        })
 	    }
@@ -194,7 +195,7 @@ class EnrolPage {
 
 				if (data.teachers.length) {
 					courseHTML += `
-						<li class=""><a href="#tab-3">Teachers</a></li>
+						<li class=""><a href="#tab-3">${data.teacherText}</a></li>
 					`
 				}
 
@@ -208,16 +209,16 @@ class EnrolPage {
 				if (data.description.content) {
 					courseHTML += `
 						<div id="tab-1" class="tab-pane active"> 
-							<p>${data.description.content}</p>
+							${data.description.content}
 						</div> 
 					`
 				}
 
 				if (data.objectives.content) {
 					courseHTML += `
-						<div id="tab-2" class="tab-pane">
-							<p>${data.objectives.content}</p>
-						</div>
+						<div id="tab-2" class="tab-pane"> 
+							${data.objectives.content}
+						</div> 
 					`
 				}		
 							
@@ -227,7 +228,7 @@ class EnrolPage {
 							<ul class="list-reset">
 					`
 
-					_.forEach(data.teachers, teacher => {
+					l_forEach(data.teachers, teacher => {
 						courseHTML += `
 							<li>${teacher}</li>
 						`
