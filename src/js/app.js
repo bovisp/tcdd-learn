@@ -60,40 +60,40 @@ let enrolPage = document.getElementById("page-enrol-index")
 if (enrolPage !== null) {
 	const enrolePage = new EnrolPage(enrolPage)
 	enrolePage.create()
+
+	// Course enrol tabs javascript
+	window.addEventListener("load", function() {
+		// store tabs variable
+		const myTabs = document.querySelectorAll("ul.nav-tabs > li") 
+
+		function myTabClicks(tabClickEvent) {
+			for (var i = 0; i < myTabs.length; i++) {
+				myTabs[i].classList.remove("active") 
+			}
+
+			let clickedTab = tabClickEvent.currentTarget
+			clickedTab.classList.add("active")
+
+			tabClickEvent.preventDefault()
+
+			let myContentPanes = document.querySelectorAll(".tab-pane")
+
+			for (i = 0; i < myContentPanes.length; i++) {
+				myContentPanes[i].classList.remove("active")
+			}
+
+			let anchorReference = tabClickEvent.target
+			let activePaneId = anchorReference.getAttribute("href")
+			let activePane = document.querySelector(activePaneId)
+
+			activePane.classList.add("active")
+		}
+
+		for (i = 0; i < myTabs.length; i++) {
+			myTabs[i].addEventListener("click", myTabClicks)
+		}
+	})
 }
-
-// Course enrol tabs javascript
-window.addEventListener("load", function() {
-	// store tabs variable
-	const myTabs = document.querySelectorAll("ul.nav-tabs > li") 
-
-	function myTabClicks(tabClickEvent) {
-		for (var i = 0; i < myTabs.length; i++) {
-			myTabs[i].classList.remove("active") 
-		}
-
-		let clickedTab = tabClickEvent.currentTarget
-		clickedTab.classList.add("active")
-
-		tabClickEvent.preventDefault()
-
-		let myContentPanes = document.querySelectorAll(".tab-pane")
-
-		for (i = 0; i < myContentPanes.length; i++) {
-			myContentPanes[i].classList.remove("active")
-		}
-
-		let anchorReference = tabClickEvent.target
-		let activePaneId = anchorReference.getAttribute("href")
-		let activePane = document.querySelector(activePaneId)
-
-		activePane.classList.add("active")
-	}
-
-	for (i = 0; i < myTabs.length; i++) {
-		myTabs[i].addEventListener("click", myTabClicks)
-	}
-})
 
 // Delete Manager Tools block
 const blocks = document.querySelectorAll('.block')
