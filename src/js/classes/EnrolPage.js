@@ -19,7 +19,9 @@ class EnrolPage {
 	    const objectives = this.objectives()
 	    const image = this.image()
 	    const teachers = this.teachers()
-	    const teacherText = document.querySelector('#teacher').textContent
+	    const teacherTextElement = document.querySelector('#teacher')
+		
+		teacherText = teacherTextElement ? teacherTextElement.textContent : ''
 
 	    const courseData = {
             title, url, image, teachers, teacherText, metadata, description, objectives

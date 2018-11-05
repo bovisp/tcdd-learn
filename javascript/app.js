@@ -14713,7 +14713,9 @@ var EnrolPage = function () {
 			var objectives = this.objectives();
 			var image = this.image();
 			var teachers = this.teachers();
-			var teacherText = document.querySelector('#teacher').textContent;
+			var teacherTextElement = document.querySelector('#teacher');
+
+			teacherText = teacherTextElement ? teacherTextElement.textContent : '';
 
 			var courseData = {
 				title: title, url: url, image: image, teachers: teachers, teacherText: teacherText, metadata: metadata, description: description, objectives: objectives
