@@ -21,7 +21,7 @@ class EnrolPage {
 	    const teachers = this.teachers()
 	    const teacherTextElement = document.querySelector('#teacher')
 		
-		teacherText = teacherTextElement ? teacherTextElement.textContent : ''
+		const teacherText = teacherTextElement ? teacherTextElement.textContent : ''
 
 	    const courseData = {
             title, url, image, teachers, teacherText, metadata, description, objectives

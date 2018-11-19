@@ -110,7 +110,7 @@ l_forEach(blocks, block => {
 let playerWrappers = document.querySelectorAll('.mediaplugin_videojs')
 
 l_forEach(playerWrappers, player => {
-	player.childNodes[0].style.maxWidth = '1280px'
+	player.childNodes[0].style.maxWidth = '720px'
 })
 
 // Reduce the length of course decription in slick slider

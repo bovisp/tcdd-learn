@@ -10562,7 +10562,7 @@ l_forEach(blocks, function (block) {
 var playerWrappers = document.querySelectorAll('.mediaplugin_videojs');
 
 l_forEach(playerWrappers, function (player) {
-	player.childNodes[0].style.maxWidth = '1280px';
+	player.childNodes[0].style.maxWidth = '720px';
 });
 
 // Reduce the length of course decription in slick slider
@@ -14715,7 +14715,7 @@ var EnrolPage = function () {
 			var teachers = this.teachers();
 			var teacherTextElement = document.querySelector('#teacher');
 
-			teacherText = teacherTextElement ? teacherTextElement.textContent : '';
+			var teacherText = teacherTextElement ? teacherTextElement.textContent : '';
 
 			var courseData = {
 				title: title, url: url, image: image, teachers: teachers, teacherText: teacherText, metadata: metadata, description: description, objectives: objectives
