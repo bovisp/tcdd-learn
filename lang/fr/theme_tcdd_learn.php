@@ -117,4 +117,4 @@ $string['contactmessage'] = 'Vous pouvez communiquer avec la Division de la form
 
 $string['frontpagewarning'] = 'Bienvenue à cette nouvelle version du Portail de formation! Vous verrez certaines améliorations dans la présentation du site incluant la définition d’objectifs d’apprentissage associés aux modules de formation. S’il-vous-plaît prenez note que le travail n’est pas fini pour certaines parties du portail. Par exemple, la conversion vers le nouveau format de présentation reste à être complétée pour certains modules. Merci pour votre patience.';
 
-$string['sitedown'] = 'The MSC Training Portal will be unavailable 11:00AM to 4:00PM Eastern time on January 2nd, 2019. We will be performing server maintenance and upgrades at this time.';
+$string['sitedown'] = 'Le portail de formation du SMC ne sera pas disponible le 2 janvier 2019, de 11h00 à 16h00 l\’heure de l\'Est, en raison de la mise à niveau du serveur.';
