@@ -116,3 +116,5 @@ $string['logo'] = 'http://msc-educ-smc.cmc.ec.gc.ca/moodle/images/logo_en.png';
 $string['contactmessage'] = 'You may contact the Training and Career Development Division (TCDD) at:';
 
 $string['frontpagewarning'] = 'Welcome to the new version of the Training Portal!  You will notice a few new features which will better define the available material on this site including learning objectives relevant to training. Please note, however, that work is still in progress and not all available material have been converted to new formats. Thank you for your patience.';
+
+$string['sitedown'] = 'The MSC Training Portal will be unavailable 11:00AM to 4:00PM Eastern time on January 2nd, 2019. We will be performing server maintenance and upgrades at this time.';
