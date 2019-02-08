@@ -111,7 +111,7 @@ $string['trainingportal'] = 'Training Portal';
 
 $string['links'] = 'Links';
 
-$string['logo'] = 'http://msc-educ-smc.cmc.ec.gc.ca/moodle/images/logo_en.png';
+$string['logo'] = 'https://raw.githubusercontent.com/bovisp/tcdd-learn/master/images/logo_en.png';
 
 $string['contactmessage'] = 'You may contact the Training and Career Development Division (TCDD) at:';
 
